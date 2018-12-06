@@ -1,3 +1,3 @@
 const server = require('./api/server.js');
 
-server.listen(port, () => console.log(`server up on port ${port}`));
+server.listen(server.port, () => console.log(`\n** server up on port ${server.port} **\n`));

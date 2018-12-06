@@ -30,3 +30,19 @@ describe('server.js', () => {
         expect(response.body).toEqual(expected);
     })
 });
+
+describe('Post /greet endpoint', () => {
+    it('should greet the person', async () => {
+        let response = await request(server)
+            .post('/greet')
+            .send({ firstName: 'Ryan', lastName: "Clausen" });
+
+        expect(response.body).toEqual({ hello: 'Ryan Clausen' });
+
+        response = await request(server)
+            .post('/greet')
+            .send({ firstName: 'Brian', lastName: "Williams" });
+
+        expect(response.body).toEqual({ hello: 'Brian Williams' });
+    })
+})

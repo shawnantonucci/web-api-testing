@@ -6,7 +6,7 @@ server.use(express.json());
 
 // sanity check
 server.get('/', (req, res) => {
-    res.status(200).jsonp({ Api: 'up' });
+    res.status(200).json({ api: 'up' });
 });
 
 const port = process.env.PORT || 9000;

@@ -21,5 +21,12 @@ describe('server.js', () => {
         let response = await request(server).get('/');
 
         expect(response.type).toBe('application/json');
+    });
+
+    it('should return with a body like: { api: "up" }', async () => {
+        const expected = { api: 'up' };
+        let response = await request(server).get('/');
+
+        expect(response.body).toEqual(expected);
     })
 });
